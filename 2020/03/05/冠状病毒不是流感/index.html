@@ -285,6 +285,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/05/%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E4%B8%8D%E6%98%AF%E6%B5%81%E6%84%9F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/03/05/%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E4%B8%8D%E6%98%AF%E6%B5%81%E6%84%9F/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -393,6 +403,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -649,6 +666,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'algernon2030',
+            repo: 'remarks',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6b0938f03ba3751653c6c14971757a49e6a1445a',
+            
+                client_id: 'Iv1.251b3350f0061c26'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
