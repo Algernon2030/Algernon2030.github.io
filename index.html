@@ -284,6 +284,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/05/%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E4%B8%8D%E6%98%AF%E6%B5%81%E6%84%9F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/05/%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E4%B8%8D%E6%98%AF%E6%B5%81%E6%84%9F/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -407,6 +417,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/04/new/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/04/new/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -703,31 +723,27 @@
 
 
   
-
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'YBhHBVRQItdsmmsvSrs7wHFS-gzGzoHsz',
+        appKey: 'uCHcRzVqRzUXlN9GsVIyRfoS',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
