@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f4b3a6;
+  background: #c8ff96;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2943,9 +2943,6 @@ hr {
 .main-inner {
   margin-top: 20px;
 }
-.header {
-  background-image: linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%) !important;
-}
 .site-meta .site-title {
   font-size: 28px;
   font-family: 'Comic Sans MS', sans-serif;
@@ -2967,12 +2964,6 @@ hr {
 }
 .post-body {
   text-align: justify;
-}
-#days {
-  display: block;
-  color: #07b39b;
-  font-size: 13px;
-  margin-top: 15px;
 }
 a {
   border-bottom: none;
@@ -3354,45 +3345,6 @@ h1.post-title {
 div.post-meta {
   font-size: 12px;
 }
-.posts-expand .post-body h1:before {
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  content: "🌈";
-  font-size: 18px;
-  line-height: 18px;
-  margin-right: 16px;
-}
-.posts-expand .post-body h2:before {
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  content: "🌞";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  line-height: 18px;
-  margin-right: 16px;
-}
-.posts-expand .post-body h3:before {
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  content: "🔍";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  line-height: 18px;
-  margin-right: 16px;
-}
-.posts-expand .post-body h4:before,
-.posts-expand .post-body h5:before,
-.posts-expand .post-body h6:before {
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
-  line-height: 18px;
-  margin-right: 18px;
-}
 .posts-expand .post-body img {
   border: 0px;
 }
@@ -3499,8 +3451,6 @@ li.nav-item.nav-level-6 {
 }
 @media (max-width: 767px) {
   .header {
-    background-image: linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%) !important;
-    background-color: #fff;
     border-bottom: 1px #eee;
     left: 0;
     top: 0;
