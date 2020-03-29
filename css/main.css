@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2dd509;
+  background: #87715e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3498,8 +3498,8 @@ li.nav-item.nav-level-6 {
 }
 div#comments.comments.v {
   margin-top: 0px !important;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 div.vheader.item2 {
   border-bottom: 1px solid #5f5f5f;
@@ -3520,17 +3520,9 @@ div.vcontrol {
 div#comments.comments.v {
   border: 0px;
 }
-.v .vlist .vcard .vquote {
-  border-left: none !important;
-}
-.v .vlist .vcard .vh {
-  border-bottom: none !important;
-}
 .v .vwrap {
   border: 2px solid #000 !important;
   height: 250px !important;
-  width: 98%;
-  left: 1%;
   border-radius: 6px !important;
   overflow: visible !important;
   counter-reset: avater;
@@ -3570,7 +3562,7 @@ div.vedit {
   height: 120px;
 }
 div.vcontrol {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 .v .veditor {
   min-height: 70px !important;
@@ -3578,8 +3570,6 @@ div.vcontrol {
 }
 .v .vlist .vcard {
   border: 1px solid #ccc !important;
-  width: 98%;
-  left: 1%;
   padding-left: 14px !important;
   padding-right: 14px !important;
   margin-bottom: 20px !important;
@@ -3636,13 +3626,14 @@ div.vcontrol {
   border: 3px solid #60a1e5;
   border-radius: 50%;
   text-align: center;
+/*content: counter(avater)'.'counter(avaters);
+    counter-increment: avaters;*/
 }
 .v .vlist .vcard p {
   top: -1.5em;
   position: relative;
   z-index: 1;
   margin: unset;
-  text-align: left;
 }
 .v .vlist .vcard .vquote a.at {
   font-size: 13px;
@@ -3676,9 +3667,6 @@ div.vcontrol {
 .v .vlist .vcard {
   padding-top: 8px !important;
 }
-.v .vlist .vcard .vh {
-  border-bottom: none;
-}
 .v .vlist .vcard .vhead {
   float: left !important;
 }
@@ -3686,23 +3674,8 @@ div.vcontrol {
   float: right !important;
 }
 .v .vlist .vcard .vcontent.expand:after {
-  content: "👆 展开留言" !important;
+  content: "点击查看全部" !important;
   font-weight: 400 !important;
-  font-size: 14px;
-  border: 2px solid #666;
-  display: block;
-  text-align: center;
-  color: #276c95;
-  position: absolute;
-  width: 35%;
-  height: 15%;
-  line-height: 29px;
-  padding: 0px;
-  left: 30%;
-  bottom: 1px;
-  pointer-events: none;
-  background: #bbb;
-  z-index: 7;
 }
 .pagination {
   height: 40px;
