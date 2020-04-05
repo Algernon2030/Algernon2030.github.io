@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="比特币被称为加密货币crypto-currency区块链上内容都是公开的，包括区块的地址，转账的金额。 比特币主要用到了密码学中的两个功能:1.哈希2.签名 1.密码学中用到的哈希函数被称为cryptographic hash function:    它有两个重要的性质:①collision(这里指哈希碰撞) resistance  :例如x≠y H(x)&#x3D;H(y) 两个不同的输入，输出却是相等">
+<meta name="description" content="比特币被称为加密货币crypto-currency">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区块链前言">
 <meta property="og:url" content="http://dalipan.com/2020/04/06/%E5%8C%BA%E5%9D%97%E9%93%BE/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="比特币被称为加密货币crypto-currency区块链上内容都是公开的，包括区块的地址，转账的金额。 比特币主要用到了密码学中的两个功能:1.哈希2.签名 1.密码学中用到的哈希函数被称为cryptographic hash function:    它有两个重要的性质:①collision(这里指哈希碰撞) resistance  :例如x≠y H(x)&#x3D;H(y) 两个不同的输入，输出却是相等">
+<meta property="og:description" content="比特币被称为加密货币crypto-currency">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-05T16:10:54.000Z">
-<meta property="article:modified_time" content="2020-04-05T17:27:20.404Z">
+<meta property="article:modified_time" content="2020-04-05T17:36:26.041Z">
 <meta property="article:author" content="wang-yanwei">
 <meta name="twitter:card" content="summary">
 
@@ -351,7 +351,7 @@
       
 
       
-        <p>比特币被称为加密货币crypto-currency<br>区块链上内容都是公开的，包括区块的地址，转账的金额。</p>
+        <p>比特币被称为加密货币crypto-currency <a id="more"></a><br>区块链上内容都是公开的，包括区块的地址，转账的金额。</p>
 <p>比特币主要用到了密码学中的两个功能:1.哈希2.签名</p>
 <p>1.密码学中用到的哈希函数被称为cryptographic hash function:    它有两个重要的性质:<br>①collision(这里指哈希碰撞) resistance  :例如x≠y H(x)=H(y) 两个不同的输入，输出却是相等的，这就称哈希碰撞。它是不可避免的，因为输入空间总大于输出空间。给出x，很难找到y，除非蛮力求解(brute-force)。<br>该性质的作用:对一个message求digest<br>比如message取m m的哈希值是H(m)=digest 如果有人想篡改m值而H(m)不变，则无法做到。<br>哈希碰撞无法人为制造，无法验证，是根据实践经验得来的。<br>②hiding 哈希函数的计算过程是单向的，不可逆的。(从H(x)无法推导出x) hiding性质前提是输入空间足够大，分布比较均匀。如果不是足够大，一般在x后面拼接一个随机数，如H(x||nonce)。<br>该性质的作用:和collision resistance 结合在一起，用来实现digital commitment(又称为digital equivalent of a sealed envelope)<br>把预测结果作为输入x，算出一个哈希值，讲哈希值公布，hiding让人们知道哈希值而不知道预测值，最后再将x公布，因为有collision resistance的性质，预测结果是不可篡改的。</p>
 <p>除了密码学中要求的这两个性质外，比特币中用到的哈希函数还有第三个性质:<br>③puzzle friendly 指哈希值的预算事先是不可预测的。假如哈希值是00…0XX…X，一样事先无法知道哪个值更容易算出这个结果，还是要一个一个带入。</p>
