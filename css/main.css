@@ -185,8 +185,8 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #fff;
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 h1,
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -493,7 +493,7 @@ pre,
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: consolas, Menlo, 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif, monospace;
 }
 code {
   padding: 2px 4px;
@@ -1078,12 +1078,14 @@ pre .javascript .function {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .back-to-top {
-    display: none !important;
+    right: 20px;
+    opacity: 0.8;
   }
 }
 @media (max-width: 767px) {
   .back-to-top {
-    display: none !important;
+    right: 20px;
+    opacity: 0.8;
   }
 }
 .back-to-top.back-to-top-on {
@@ -1131,7 +1133,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1219,7 +1221,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1237,7 +1239,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1497,7 +1499,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1676,16 +1678,6 @@ pre .javascript .function {
 .sidebar a:hover {
   color: #eee;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .sidebar {
-    display: none !important;
-  }
-}
-@media (max-width: 767px) {
-  .sidebar {
-    display: none !important;
-  }
-}
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
@@ -1714,12 +1706,14 @@ pre .javascript .function {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .sidebar-toggle {
-    display: none !important;
+    right: 20px;
+    opacity: 0.8;
   }
 }
 @media (max-width: 767px) {
   .sidebar-toggle {
-    display: none !important;
+    right: 20px;
+    opacity: 0.8;
   }
 }
 .sidebar-toggle-line {
@@ -1822,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #87715e;
+  background: #d1b3ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1941,6 +1935,32 @@ pre .javascript .function {
 }
 .post-toc .nav .active-current > a:hover {
   color: #87daff;
+}
+.sidebar-active #sidebar-dimmer {
+  opacity: 0.7;
+  -webkit-transform: translateX(-150%);
+  -webkit-transform: translateX(-150%);
+  -moz-transform: translateX(-150%);
+  -ms-transform: translateX(-150%);
+  -o-transform: translateX(-150%);
+  transform: translateX(-150%);
+  transition: opacity 0.2s;
+}
+#sidebar-dimmer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 200%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0s 0.2s;
+}
+@media (max-width: 767px) {
+  #sidebar-dimmer {
+    display: block;
+  }
 }
 .footer {
   font-size: 14px;
@@ -2803,7 +2823,7 @@ hr {
 }
 @media (max-width: 767px) {
   .posts-expand .post-body {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .posts-expand .post-body img {
@@ -2829,7 +2849,7 @@ hr {
 }
 .post-button a {
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   background: none;
   border: none;
   border-bottom: 2px solid #666;
@@ -2837,12 +2857,12 @@ hr {
 }
 @media (max-width: 767px) {
   .post-button a {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media (min-width: 1600px) {
   .post-button a {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .post-button a:hover {
@@ -3004,11 +3024,11 @@ a:hover {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #34495e;
+    color: #000;
   }
   .menu {
     display: flex;
-    margin-left: 40px;
+    margin-left: 20px;
   }
   .fa-fw {
     text-align: none !important;
@@ -3018,7 +3038,7 @@ a:hover {
   }
   .site-nav {
     border-top: none !important;
-    padding-top: 1px;
+    padding-top: 2px;
   }
   .posts-expand .post-body span.info {
     font-size: 0.85em;
@@ -3226,7 +3246,7 @@ a:hover {
   .my-post-title {
     display: block;
     margin-left: 4rem !important;
-    color: #4c4948;
+    color: #000;
     text-decoration: none;
     font-size: 0.8rem;
     cursor: pointer;
@@ -3320,7 +3340,7 @@ h1.post-title {
   font-size: 14px;
   margin-top: 30px;
   margin-bottom: 0px;
-  color: #666;
+  color: #000;
 }
 .post-button .btn {
   color: #555;
