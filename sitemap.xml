@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yanweinotes.com/about/index.html</loc>
+    
+    <lastmod>2020-04-28T06:17:23.381Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yanweinotes.com/%E6%97%8B%E5%85%83%E4%BD%91%E8%AF%AD%E6%B3%95.html</loc>
     
     <lastmod>2020-04-28T06:16:08.609Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://www.yanweinotes.com/%E8%B5%84%E6%BA%90.html</loc>
     
     <lastmod>2020-04-26T07:57:41.311Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.yanweinotes.com/about/index.html</loc>
-    
-    <lastmod>2020-04-25T04:20:21.319Z</lastmod>
     
   </url>
   
