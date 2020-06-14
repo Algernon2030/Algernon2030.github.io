@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.yanweinotes.com/Mysql.html</loc>
+    <loc>http://www.yanweinotes.com/environment.html</loc>
     
-    <lastmod>2020-06-14T15:45:26.808Z</lastmod>
+    <lastmod>2020-06-14T15:57:04.856Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.yanweinotes.com/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html</loc>
     
-    <lastmod>2020-06-03T16:12:34.416Z</lastmod>
+    <lastmod>2020-06-14T15:56:04.571Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yanweinotes.com/Mysql.html</loc>
+    
+    <lastmod>2020-06-14T15:45:26.808Z</lastmod>
     
   </url>
   
