@@ -108,12 +108,14 @@
 
 
 
+<meta name="description" content="数据库概要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="environment">
 <meta property="og:url" content="http://www.yanweinotes.com/environment.html">
 <meta property="og:site_name" content="Notes">
+<meta property="og:description" content="数据库概要">
 <meta property="article:published_time" content="2020-06-14T15:57:04.000Z">
-<meta property="article:modified_time" content="2020-06-14T15:57:04.856Z">
+<meta property="article:modified_time" content="2020-06-16T02:31:48.803Z">
 <meta property="article:author" content="wang-yanwei">
 <meta name="twitter:card" content="summary">
 
@@ -416,7 +418,176 @@
       
 
       
-        
+        <p>数据库概要<a id="more"></a></p>
+<h2 id="一、为什么要学习数据库"><a href="#一、为什么要学习数据库" class="headerlink" title="一、为什么要学习数据库"></a>一、为什么要学习数据库</h2><p>1.持久化数据</p>
+<p>2.方便检索</p>
+<p>3.存储大量数据</p>
+<p>4.共享、安全</p>
+<p>5.通过组合分析，获取新的数据</p>
+<h2 id="二、数据库的相关概念"><a href="#二、数据库的相关概念" class="headerlink" title="二、数据库的相关概念"></a>二、数据库的相关概念</h2><p>​        <strong>DBMS、DB、SQL</strong></p>
+<p>DB:database数据库，存储一系列有组织数据的容器</p>
+<p>DBMS：Database Management System数据库管理系统，使用DBMS管理和维护DB</p>
+<p>SQL：StructureQueryLanguage结构化查询语言，程序员用于和DBMS通信的语言</p>
+<h2 id="三、数据库存储数据的特点"><a href="#三、数据库存储数据的特点" class="headerlink" title="三、数据库存储数据的特点"></a>三、数据库存储数据的特点</h2><p>1、数据先放在表中，表再放在库中</p>
+<p>2、一个库可以有多张表，每张表都有自己的唯一标识名</p>
+<p>3、一张表的设计，类似于java中”类”的设计</p>
+<p>​      表中的字段的设计，类似于属性的设计</p>
+<p>​      表中的单条记录，类似于一个对象</p>
+<p>​      表中的所有的记录，类似于对象的集合</p>
+<p>​     orm ：object relation mapping 对象关系映射</p>
+<h2 id="四、初始MySQL"><a href="#四、初始MySQL" class="headerlink" title="四、初始MySQL"></a>四、初始MySQL</h2><h3 id="1、MySQL产品的介绍"><a href="#1、MySQL产品的介绍" class="headerlink" title="1、MySQL产品的介绍"></a>1、MySQL产品的介绍</h3><p>MySQL 前身属于瑞典的一家公司AB，2008年被sun公司收购，2009年sun被oracle公司收购。</p>
+<p>特点：</p>
+<p>① 体积小、安装较方便</p>
+<p>②开源、免费</p>
+<p>③性能高、稳定性好</p>
+<p>④兼容性好</p>
+<h3 id="2、MySQL产品的安装-★"><a href="#2、MySQL产品的安装-★" class="headerlink" title="2、MySQL产品的安装          ★"></a>2、MySQL产品的安装          ★</h3><p>基于C/S架构的DBMS，需要安装服务端和客户端</p>
+<p><a href="http://www.oracle.com" target="_blank" rel="noopener">www.oracle.com</a></p>
+<p>MySQL5.5</p>
+<h3 id="3、MySQL服务的启动和停止-★"><a href="#3、MySQL服务的启动和停止-★" class="headerlink" title="3、MySQL服务的启动和停止     ★"></a>3、MySQL服务的启动和停止     ★</h3><p>方式一：图形化</p>
+<p>右击——计算机管理——服务——MySQL服务</p>
+<p>方式二：通过管理员身份运行dos</p>
+<p>net start 服务名</p>
+<p>net stop 服务名</p>
+<h3 id="4、MySQL服务的登录和退出-★"><a href="#4、MySQL服务的登录和退出-★" class="headerlink" title="4、MySQL服务的登录和退出     ★"></a>4、MySQL服务的登录和退出     ★</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><strong>方式一：通过dos命令</strong></p>
+<p>mysql -h主机名 -P端口号 -u用户名 -p密码</p>
+<p><strong>注意：</strong></p>
+<p>如果是本机，则-h主机名  可以省略</p>
+<p>如果端口号是3306，则-P端口号可以省略</p>
+<p><strong>方式二：通过图形化界面客户端</strong></p>
+<p>通过sqlyog，直接输入用户名、密码等连接进去即可</p>
+<h3 id="5、MySQL的常见命令和语法规范"><a href="#5、MySQL的常见命令和语法规范" class="headerlink" title="5、MySQL的常见命令和语法规范"></a>5、MySQL的常见命令和语法规范</h3><p><strong>①常见命令</strong></p>
+<p>show databases             显示当前连接下所有数据库</p>
+<p>show tables                    显示当前库中所有表</p>
+<p>show tables from 库名  显示指定库中所有表</p>
+<p>show  columns from 表名    显示指定表中所有列</p>
+<p>use 库名                             打开/使用指定库</p>
+<p><strong>②语法规范</strong></p>
+<p>不区分大小写</p>
+<p>每条命令结尾建议用分号</p>
+<p>注释：</p>
+<p>#单行注释</p>
+<p>– 单行注释</p>
+<p>/<em>多行注释</em>/</p>
+<h2 id="五、DQL语言的学习-★"><a href="#五、DQL语言的学习-★" class="headerlink" title="五、DQL语言的学习   ★"></a>五、DQL语言的学习   ★</h2><p>DQL:Data Query Language  数据查询语言</p>
+<p>select</p>
+<h3 id="1、基础查询-★"><a href="#1、基础查询-★" class="headerlink" title="1、基础查询        ★"></a>1、基础查询        ★</h3><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><h3 id="select-查询列表-from-表名"><a href="#select-查询列表-from-表名" class="headerlink" title="select 查询列表  from 表名;"></a>select 查询列表  from 表名;</h3><p>特点：</p>
+<p>①查询结果集是一个虚拟表</p>
+<p>②查询列表可以是单个字段、多个字段、常量、表达式、函数，可以是以上的组合</p>
+<p>引申1：起别名</p>
+<p>select 字段名  as  “别名” from 表名;</p>
+<p>select 字段名 “ 别名” from 表名;</p>
+<p>引申2：+的作用</p>
+<p>作用：加法运算</p>
+<ul>
+<li><p>如果两个操作数都是数值型，则直接做加法运算</p>
+</li>
+<li><p>如果其中一个为非数值型，则将强值转换成数值型，如果转换失败，则当做0</p>
+</li>
+</ul>
+<p>‘123’+4====》127</p>
+<p>‘abc’+4====》 4</p>
+<ul>
+<li>如果其中一个为null，则结果直接为null</li>
+</ul>
+<p>引申3：去重</p>
+<p>select distinct department_id from employees;</p>
+<p>引申4：补充函数</p>
+<p>select version();</p>
+<p>select database();</p>
+<p>select user();</p>
+<p>select ifnull(字段名,表达式);</p>
+<p>select concat(字符1，字符2,字符3);</p>
+<p>select length(字符/字段);获取字节长度</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="2、条件查询-★"><a href="#2、条件查询-★" class="headerlink" title="2、条件查询         ★"></a>2、条件查询         ★</h3><h3 id="语法：-1"><a href="#语法：-1" class="headerlink" title="语法："></a>语法：</h3><h3 id="select-查询列表"><a href="#select-查询列表" class="headerlink" title="select 查询列表"></a>select 查询列表</h3><h3 id="from-表名"><a href="#from-表名" class="headerlink" title="from 表名"></a>from 表名</h3><h3 id="where-筛选条件"><a href="#where-筛选条件" class="headerlink" title="where 筛选条件;"></a>where 筛选条件;</h3><h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><p>筛选条件的分类：</p>
+<p>①按条件表达式筛选</p>
+<p>关系运算符：&gt;=   &lt;   &lt;=   &gt;    &lt;&gt;   =</p>
+<p>②按逻辑表达式筛选</p>
+<p>逻辑运算符：and   or   not</p>
+<p>③模糊查询</p>
+<p>like:一般和通配符搭配使用</p>
+<p>​     _ 任意单个字符</p>
+<p>​    % 任意多个字符</p>
+<p>between and：一般用于判断某字段是否在指定的区间</p>
+<p>​        a between 10 and  100</p>
+<p>in：一般用于判断某字段是否在指定的列表</p>
+<p>​        a  in(10,30,50)</p>
+<p>is null:判断null值</p>
+<p>​    </p>
+<h3 id="3、排序查询-★"><a href="#3、排序查询-★" class="headerlink" title="3、排序查询         ★"></a>3、排序查询         ★</h3><p><strong>语法：</strong></p>
+<p>select  查询列表</p>
+<p>from 表名</p>
+<p>where 筛选条件</p>
+<p>order by 排序列表 ;</p>
+<p><strong>特点：</strong></p>
+<p>①排序列表可以是 单个字段、多个字段、函数、表达式、别名、列的索引，以及以上的组合</p>
+<p>②升序，通过asc</p>
+<p>​    降序，通过desc</p>
+<h3 id="4、常见函数-★"><a href="#4、常见函数-★" class="headerlink" title="4、常见函数        ★"></a>4、常见函数        ★</h3><p>​     分为单行函数和分组函数，调用语法一样</p>
+<p>SELECT 函数（实参）</p>
+<p><strong>字符函数</strong></p>
+<p>CONCAT(str1,str2),拼接字符</p>
+<p>SUBSTR(str,pos),截取从post开始的字符</p>
+<p>SUBSTR(str,pos,len)</p>
+<p>UPPER()，变大写</p>
+<p>LOWER()，变小写</p>
+<p>TRIM()，去除前后指定符</p>
+<p>LEFT(),左边截取</p>
+<p>RIGHT(),右边截取</p>
+<p>LPAD,左填充</p>
+<p>RPAD右填充</p>
+<p>STRCMP，比较字符大小</p>
+<p>INSTR，获取索引</p>
+<p><strong>数学函数</strong></p>
+<p>ceil(2.3),向上取整</p>
+<p>floor(1.3),向下取整</p>
+<p>abs(-4),绝对值</p>
+<p>ROUND(3.2384,3)，四舍五入</p>
+<p>MOD(-10,3),取余</p>
+<p>TRUNCATE(2.3456,2),截断，保留后面小数</p>
+<p><strong>日期函数</strong></p>
+<p>NOW()</p>
+<p>CURTIME()</p>
+<p>CURDATE()</p>
+<p>DATE_FORMAT(),格式日期</p>
+<p>DATEDIFF(data1,data2),获取日期差</p>
+<p>STR_TO_DATE(‘1934-3-23-12-34-54’,%Y%m%d, ),字符转换为日期</p>
+<p><strong>流程控制函数</strong></p>
+<p>IF(条件，表达式1，表达式2)</p>
+<p>CASE</p>
+<p>WHEN THEN</p>
+<p>WHEN THEN</p>
+<p>CASE</p>
+<p>END</p>
+<h3 id="5、分组函数-★"><a href="#5、分组函数-★" class="headerlink" title="5、分组函数        ★"></a>5、分组函数        ★</h3><p> SUM()</p>
+<p>AVG()</p>
+<p>MAX()</p>
+<p>MIN()</p>
+<p>COUNT()          </p>
+<p>与DISCINCT一起用。SELECT COUNT(DISCINCT) FROM表</p>
+<h3 id="6、分组查询-★"><a href="#6、分组查询-★" class="headerlink" title="6、分组查询           ★"></a>6、分组查询           ★</h3><p>SELECT</p>
+<p>FROM</p>
+<p>WHERE</p>
+<p>GROUP BY</p>
+<p>HAVING</p>
+<p>ORDER BY</p>
+<h3 id="7、连接查询-★"><a href="#7、连接查询-★" class="headerlink" title="7、连接查询         ★"></a>7、连接查询         ★</h3><p>涉及到了多个表，每个表中有相互关联的字段    </p>
+<p>避免出现笛卡尔乘积现象：连接条件有问题</p>
+<p>外连接与内连接</p>
+<h3 id="8、子查询-√"><a href="#8、子查询-√" class="headerlink" title="8、子查询       √"></a>8、子查询       √</h3><p>​      外连接：主表和从表      </p>
+<p>主表中所有记录 在从表中有匹配项，显示匹配项，如没有显示NULL，一般查询主表有，从表没有记录</p>
+<p>外连接主从表不能换</p>
+<p>左连接左为主，右连接右为主</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT 查询列表</span><br><span class="line">FROM 表1</span><br><span class="line">LEFT&#x2F;RIGHT OUTER JOIN 表2</span><br><span class="line">LEFT&#x2F;RIGHT FULL OUTER JOIN 表2  全外连接</span><br><span class="line">ON 连接条件</span><br><span class="line">WHERE 约束条件</span><br></pre></td></tr></table></figure>
+
+<p>左连接和右连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT b.*,bo.*</span><br><span class="line">FROM beauty b</span><br><span class="line">LEFT JOIN boys bo ON b.boyfriend &#x3D; bo.id</span><br><span class="line"></span><br><span class="line">SELECT b.*,bo.*</span><br><span class="line">FROM boys bo</span><br><span class="line">RIGHT JOIN beauty b ON b.boyfriend &#x3D; bo.id</span><br><span class="line"></span><br><span class="line">查女神没有男朋友的情况</span><br><span class="line">在结尾添加</span><br><span class="line">WHERE bo.id IS NULL</span><br></pre></td></tr></table></figure>
+
+<p>查询哪个部门没有员工，查部门编号和部门名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT d.department_id,department COUNT(*)</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN department d ON d.department_id &#x3D; e.department_id</span><br><span class="line">WHERE e.employee_id IS NULL</span><br></pre></td></tr></table></figure>
+
+<h3 id="9、分页查询-★"><a href="#9、分页查询-★" class="headerlink" title="9、分页查询       ★"></a>9、分页查询       ★</h3><h3 id="10、union联合查询-√"><a href="#10、union联合查询-√" class="headerlink" title="10、union联合查询    √"></a>10、union联合查询    √</h3><h2 id="六、DML语言的学习-★"><a href="#六、DML语言的学习-★" class="headerlink" title="六、DML语言的学习    ★"></a>六、DML语言的学习    ★</h2><h3 id="1、插入语句"><a href="#1、插入语句" class="headerlink" title="1、插入语句"></a>1、插入语句</h3><h3 id="2、修改语句"><a href="#2、修改语句" class="headerlink" title="2、修改语句"></a>2、修改语句</h3><h3 id="3、删除语句"><a href="#3、删除语句" class="headerlink" title="3、删除语句"></a>3、删除语句</h3><h2 id="七、DDL语言的学习"><a href="#七、DDL语言的学习" class="headerlink" title="七、DDL语言的学习"></a>七、DDL语言的学习</h2><h3 id="1、库和表的管理-√"><a href="#1、库和表的管理-√" class="headerlink" title="1、库和表的管理     √"></a>1、库和表的管理     √</h3><h3 id="2、常见数据类型介绍-√"><a href="#2、常见数据类型介绍-√" class="headerlink" title="2、常见数据类型介绍  √"></a>2、常见数据类型介绍  √</h3><h3 id="3、常见约束-√"><a href="#3、常见约束-√" class="headerlink" title="3、常见约束        √"></a>3、常见约束        √</h3><h2 id="八、TCL语言的学习"><a href="#八、TCL语言的学习" class="headerlink" title="八、TCL语言的学习"></a>八、TCL语言的学习</h2><h3 id="事务和事务处理"><a href="#事务和事务处理" class="headerlink" title="事务和事务处理"></a>事务和事务处理</h3>
       
     </div>
     
@@ -539,8 +710,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -617,6 +797,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、为什么要学习数据库"><span class="nav-number">1.</span> <span class="nav-text">一、为什么要学习数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数据库的相关概念"><span class="nav-number">2.</span> <span class="nav-text">二、数据库的相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、数据库存储数据的特点"><span class="nav-number">3.</span> <span class="nav-text">三、数据库存储数据的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、初始MySQL"><span class="nav-number">4.</span> <span class="nav-text">四、初始MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、MySQL产品的介绍"><span class="nav-number">4.1.</span> <span class="nav-text">1、MySQL产品的介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、MySQL产品的安装-★"><span class="nav-number">4.2.</span> <span class="nav-text">2、MySQL产品的安装          ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、MySQL服务的启动和停止-★"><span class="nav-number">4.3.</span> <span class="nav-text">3、MySQL服务的启动和停止     ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、MySQL服务的登录和退出-★"><span class="nav-number">4.4.</span> <span class="nav-text">4、MySQL服务的登录和退出     ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">4.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、MySQL的常见命令和语法规范"><span class="nav-number">4.6.</span> <span class="nav-text">5、MySQL的常见命令和语法规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、DQL语言的学习-★"><span class="nav-number">5.</span> <span class="nav-text">五、DQL语言的学习   ★</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、基础查询-★"><span class="nav-number">5.1.</span> <span class="nav-text">1、基础查询        ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法："><span class="nav-number">5.2.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-查询列表-from-表名"><span class="nav-number">5.3.</span> <span class="nav-text">select 查询列表  from 表名;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">5.4.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、条件查询-★"><span class="nav-number">5.5.</span> <span class="nav-text">2、条件查询         ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法：-1"><span class="nav-number">5.6.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-查询列表"><span class="nav-number">5.7.</span> <span class="nav-text">select 查询列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from-表名"><span class="nav-number">5.8.</span> <span class="nav-text">from 表名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#where-筛选条件"><span class="nav-number">5.9.</span> <span class="nav-text">where 筛选条件;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">5.10.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、排序查询-★"><span class="nav-number">5.11.</span> <span class="nav-text">3、排序查询         ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、常见函数-★"><span class="nav-number">5.12.</span> <span class="nav-text">4、常见函数        ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、分组函数-★"><span class="nav-number">5.13.</span> <span class="nav-text">5、分组函数        ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、分组查询-★"><span class="nav-number">5.14.</span> <span class="nav-text">6、分组查询           ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、连接查询-★"><span class="nav-number">5.15.</span> <span class="nav-text">7、连接查询         ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、子查询-√"><span class="nav-number">5.16.</span> <span class="nav-text">8、子查询       √</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、分页查询-★"><span class="nav-number">5.17.</span> <span class="nav-text">9、分页查询       ★</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、union联合查询-√"><span class="nav-number">5.18.</span> <span class="nav-text">10、union联合查询    √</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、DML语言的学习-★"><span class="nav-number">6.</span> <span class="nav-text">六、DML语言的学习    ★</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、插入语句"><span class="nav-number">6.1.</span> <span class="nav-text">1、插入语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、修改语句"><span class="nav-number">6.2.</span> <span class="nav-text">2、修改语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、删除语句"><span class="nav-number">6.3.</span> <span class="nav-text">3、删除语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、DDL语言的学习"><span class="nav-number">7.</span> <span class="nav-text">七、DDL语言的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、库和表的管理-√"><span class="nav-number">7.1.</span> <span class="nav-text">1、库和表的管理     √</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、常见数据类型介绍-√"><span class="nav-number">7.2.</span> <span class="nav-text">2、常见数据类型介绍  √</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、常见约束-√"><span class="nav-number">7.3.</span> <span class="nav-text">3、常见约束        √</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、TCL语言的学习"><span class="nav-number">8.</span> <span class="nav-text">八、TCL语言的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务和事务处理"><span class="nav-number">8.1.</span> <span class="nav-text">事务和事务处理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
