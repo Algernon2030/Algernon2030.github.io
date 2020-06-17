@@ -114,10 +114,12 @@
 <meta property="og:url" content="http://www.yanweinotes.com/html.html">
 <meta property="og:site_name" content="Notes">
 <meta property="og:description" content="新月专栏今天开通了，由前端的权威专家张新月为我们讲解前端的相关知识，张老师毕业于全国重点88所院校，最终留校读研，在前端领域可以说在他们专业中排第二，没人敢当第一。接下来的几个月，张老师会为我们详细讲解前端领域中的重点。">
+<meta property="og:image" content="d:%5CDesktop%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5C02.jpg">
 <meta property="article:published_time" content="2020-06-15T14:46:21.000Z">
-<meta property="article:modified_time" content="2020-06-16T14:41:21.214Z">
+<meta property="article:modified_time" content="2020-06-17T15:06:27.246Z">
 <meta property="article:author" content="wang-yanwei">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:%5CDesktop%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5C02.jpg">
 
 
 
@@ -655,6 +657,174 @@
 <li><code>&lt;tr&gt;&lt;/tr&gt;</code>用于定义表格中的行，必须嵌套在<code>&lt;table&gt;&lt;/table&gt;</code>标签中</li>
 <li><code>&lt;td&gt;&lt;/td&gt;</code>用于定义表格中的单元格，必须嵌套在<code>&lt;tr&gt;&lt;/tr&gt;</code>标签中</li>
 </ul>
+<h5 id="表头单元格标签"><a href="#表头单元格标签" class="headerlink" title="表头单元格标签"></a>表头单元格标签</h5><p><code>&lt;th&gt;</code>标签表示表格的表头部分</p>
+<h5 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h5><p>不常用，后面通过CSS来设置</p>
+<ul>
+<li>记住单词，后面CSS会用</li>
+<li>直观感受表格外观形态</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">align</td>
+<td align="left">left、center、right</td>
+<td align="left">规定表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td align="left">border</td>
+<td align="left">1或者””</td>
+<td align="left">规定表格单元是否拥有边框，默认为””，表示没有边框</td>
+</tr>
+<tr>
+<td align="left">cellpadding</td>
+<td align="left">像素值</td>
+<td align="left">规定单元边沿与其内容之间的空白，默认1像素</td>
+</tr>
+<tr>
+<td align="left">cellspacing</td>
+<td align="left">像素值</td>
+<td align="left">规定单元格之间的空白，默认2像素</td>
+</tr>
+<tr>
+<td align="left">width</td>
+<td align="left">像素值或百分比</td>
+<td align="left">规定表格的宽度</td>
+</tr>
+</tbody></table>
+<h5 id="表格结构标签"><a href="#表格结构标签" class="headerlink" title="表格结构标签"></a>表格结构标签</h5><p>可将表格划分为表格头部和表格主体两大部分，<code>&lt;thead&gt;</code>标签表示表格的头部 <code>&lt;tbody&gt;</code>标签表示表格的主体</p>
+<h5 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h5><ul>
+<li><p>合并单元格的方式</p>
+<p>跨行合并：rowspan=”合并单元格的个数”</p>
+<p>跨列合并：colspan=”合并单元格的个数”</p>
+</li>
+<li><p>目标单元格</p>
+<p>跨行：上侧单元格为目标单元格，写合并代码</p>
+<p>跨列：左侧单元格为目标单元格，写合并代码</p>
+</li>
+</ul>
+<h3 id="2-列表标签"><a href="#2-列表标签" class="headerlink" title="2 列表标签"></a>2 列表标签</h3><p>用来布局</p>
+<p>分为无序列表、有序列表、自定义列表</p>
+<h5 id="无序列表（重点）"><a href="#无序列表（重点）" class="headerlink" title="无序列表（重点）"></a>无序列表（重点）</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>各个列表项之间没有顺序级别之分，是并列的</li>
+<li><code>&lt;ul&gt;&lt;/ul&gt;</code>中只能嵌套<code>&lt;li&gt;&lt;/li&gt;</code>，直接在<code>&lt;ul&gt;&lt;/ul&gt;</code>标签中输入其他标签或文字是不被允许的</li>
+<li><code>&lt;li&gt;&lt;/li&gt;</code>标签中可容纳所有元素</li>
+<li>带有自己的样式属性，实际使用时，使用CSS来设置</li>
+</ul>
+<h5 id="有序列表（理解）"><a href="#有序列表（理解）" class="headerlink" title="有序列表（理解）"></a>有序列表（理解）</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>&lt;ol&gt;&lt;/ol&gt;</code>中只能嵌套<code>&lt;li&gt;&lt;/li&gt;</code>，直接在<code>&lt;ol&gt;&lt;/ol&gt;</code>标签中输入其他标签或文字是不被允许的</li>
+<li><code>&lt;li&gt;&lt;/li&gt;</code>标签中可容纳所有元素</li>
+<li>带有自己的样式属性，实际使用时，使用CSS来设置</li>
+</ul>
+<h5 id="自定义列表（重点）"><a href="#自定义列表（重点）" class="headerlink" title="自定义列表（重点）"></a>自定义列表（重点）</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>名词1<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词解释1<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词解释2<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>&lt;dl&gt;&lt;/dl&gt;</code>标签中只能包含<code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code></li>
+<li><code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code>个数没有限制，经常是一个<code>&lt;dt&gt;</code>对应多个<code>&lt;dd&gt;</code></li>
+</ul>
+<h3 id="3-表单标签"><a href="#3-表单标签" class="headerlink" title="3 表单标签"></a>3 表单标签</h3><p>收集用户信息</p>
+<h5 id="表单的组成"><a href="#表单的组成" class="headerlink" title="表单的组成"></a>表单的组成</h5><p>由表单域、表单控件（也称为表单元素）和提示信息3个部分构成</p>
+<p><img src="D:%5CDesktop%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5C02.jpg" alt=""></p>
+<h5 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h5><p>包含表单元素的区域</p>
+<p><code>&lt;form&gt;</code>会把范围内的表单元素信息提交给服务器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"url地址"</span> <span class="attr">method</span>=<span class="string">"提交方式"</span> <span class="attr">name</span>=<span class="string">"表单域名称"</span>&gt;</span></span><br><span class="line">    各种表单元素控件</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>action</td>
+<td>url地址</td>
+<td>用于指定接受并处理表单数据的服务器程序的url地址</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get/post</td>
+<td>用于设置表单数据的提交方式，其取值为get或post</td>
+</tr>
+<tr>
+<td>name</td>
+<td>名称</td>
+<td>用于指定表中的名称，以区分同一页面中的多个表单域</td>
+</tr>
+</tbody></table>
+<ul>
+<li>表单元素前，应有表单域把他们进行包含</li>
+<li>表单域就是<code>&lt;form&gt;</code>标签</li>
+</ul>
+<h5 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h5><ol>
+<li><input>表单元素，用于收集用户信息</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"属性值"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>&lt;input /&gt;</code>标签为单标签</p>
+</li>
+<li><p>type属性设置不同的属性值用来指定不同的控件类型</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>button</td>
+<td>定义可点击按钮（多数情况下，用于通过JavaScript启动脚本）</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>定义复选框</td>
+</tr>
+<tr>
+<td>file</td>
+<td>定义输入字段和“浏览”按钮，供文件上传</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>定义隐藏的输入字段</td>
+</tr>
+<tr>
+<td>image</td>
+<td>定义图像形式的提交按钮</td>
+</tr>
+<tr>
+<td>password</td>
+<td>定义密码字段，该字段的字符被掩码</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>定义重置按钮，重置按钮会清除表单中的所有数据</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>定义提交按钮，提交按钮会把表单数据发送到服务器</td>
+</tr>
+<tr>
+<td>text</td>
+<td>定义单行的输入字段，用户可在其中输入文本，默认20个字符</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -718,6 +888,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/prezi.html" rel="prev" title="prezi">
+                prezi <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -803,7 +977,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -871,7 +1045,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-网页"><span class="nav-number">1.</span> <span class="nav-text">1 网页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-网页是什么"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 网页是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-HTML"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 HTML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-网页的形成"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 网页的形成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Web标准"><span class="nav-number">2.</span> <span class="nav-text">2 Web标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分"><span class="nav-number"></span> <span class="nav-text">第二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML语言规范"><span class="nav-number">1.</span> <span class="nav-text">1 HTML语言规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-基本语法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-标签关系"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 标签关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTML基本结构标签"><span class="nav-number">2.</span> <span class="nav-text">2 HTML基本结构标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-第一个页面"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 第一个页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-网页开发工具"><span class="nav-number">3.</span> <span class="nav-text">3  网页开发工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-文档类型声明标签"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 文档类型声明标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-lang语言种类"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 lang语言种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-字符集"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 字符集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-HTML常用标签"><span class="nav-number">4.</span> <span class="nav-text">4 HTML常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-标签语义"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 标签语义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-标题标签-lt-h1-gt-lt-h6-gt"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 &#x3D;&#x3D;标题标签&#x3D;&#x3D;&lt;h1&gt;-&lt;h6&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-段落和换行标签"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 &#x3D;&#x3D;段落和换行标签&#x3D;&#x3D;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-p-gt-段落标签-lt-p-gt"><span class="nav-number">4.3.1.</span> <span class="nav-text">&lt;p&gt;段落标签&lt;&#x2F;p&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#换行标签-lt-br-gt"><span class="nav-number">4.3.2.</span> <span class="nav-text">换行标签&lt;br&#x2F;&gt;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-文本格式化标签"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 文本格式化标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#斜体、粗体、删除线、下划线"><span class="nav-number">4.4.1.</span> <span class="nav-text">斜体、粗体、删除线、下划线</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-lt-div-gt-和-lt-span-gt-标签"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 &lt;div&gt;和&lt;span&gt;标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-6-图像标签和路径"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 &#x3D;&#x3D;图像标签和路径&#x3D;&#x3D;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-6-1-图像标签"><span class="nav-number">4.6.1.</span> <span class="nav-text">4.6.1 图像标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-6-2-路径"><span class="nav-number">4.6.2.</span> <span class="nav-text">4.6.2 路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对路径"><span class="nav-number">4.6.3.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绝对路径"><span class="nav-number">4.6.4.</span> <span class="nav-text">绝对路径</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-7-超链接标签"><span class="nav-number">4.7.</span> <span class="nav-text">4.7 超链接标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#链接语法格式"><span class="nav-number">4.7.1.</span> <span class="nav-text">链接语法格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链接分类"><span class="nav-number">4.7.2.</span> <span class="nav-text">链接分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-注释和特殊字符"><span class="nav-number">5.</span> <span class="nav-text">5 注释和特殊字符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注释"><span class="nav-number">5.0.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊字符"><span class="nav-number">5.0.2.</span> <span class="nav-text">特殊字符</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三部分-HTML标签（下）"><span class="nav-number"></span> <span class="nav-text">第三部分 HTML标签（下）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-表格标签"><span class="nav-number">1.</span> <span class="nav-text">1 表格标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主要作用"><span class="nav-number">1.0.1.</span> <span class="nav-text">主要作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本语法"><span class="nav-number">1.0.2.</span> <span class="nav-text">基本语法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-网页"><span class="nav-number">1.</span> <span class="nav-text">1 网页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-网页是什么"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 网页是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-HTML"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 HTML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-网页的形成"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 网页的形成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Web标准"><span class="nav-number">2.</span> <span class="nav-text">2 Web标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分"><span class="nav-number"></span> <span class="nav-text">第二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML语言规范"><span class="nav-number">1.</span> <span class="nav-text">1 HTML语言规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-基本语法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-标签关系"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 标签关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTML基本结构标签"><span class="nav-number">2.</span> <span class="nav-text">2 HTML基本结构标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-第一个页面"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 第一个页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-网页开发工具"><span class="nav-number">3.</span> <span class="nav-text">3  网页开发工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-文档类型声明标签"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 文档类型声明标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-lang语言种类"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 lang语言种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-字符集"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 字符集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-HTML常用标签"><span class="nav-number">4.</span> <span class="nav-text">4 HTML常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-标签语义"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 标签语义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-标题标签-lt-h1-gt-lt-h6-gt"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 &#x3D;&#x3D;标题标签&#x3D;&#x3D;&lt;h1&gt;-&lt;h6&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-段落和换行标签"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 &#x3D;&#x3D;段落和换行标签&#x3D;&#x3D;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-p-gt-段落标签-lt-p-gt"><span class="nav-number">4.3.1.</span> <span class="nav-text">&lt;p&gt;段落标签&lt;&#x2F;p&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#换行标签-lt-br-gt"><span class="nav-number">4.3.2.</span> <span class="nav-text">换行标签&lt;br&#x2F;&gt;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-文本格式化标签"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 文本格式化标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#斜体、粗体、删除线、下划线"><span class="nav-number">4.4.1.</span> <span class="nav-text">斜体、粗体、删除线、下划线</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-lt-div-gt-和-lt-span-gt-标签"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 &lt;div&gt;和&lt;span&gt;标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-6-图像标签和路径"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 &#x3D;&#x3D;图像标签和路径&#x3D;&#x3D;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-6-1-图像标签"><span class="nav-number">4.6.1.</span> <span class="nav-text">4.6.1 图像标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-6-2-路径"><span class="nav-number">4.6.2.</span> <span class="nav-text">4.6.2 路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对路径"><span class="nav-number">4.6.3.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绝对路径"><span class="nav-number">4.6.4.</span> <span class="nav-text">绝对路径</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-7-超链接标签"><span class="nav-number">4.7.</span> <span class="nav-text">4.7 超链接标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#链接语法格式"><span class="nav-number">4.7.1.</span> <span class="nav-text">链接语法格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链接分类"><span class="nav-number">4.7.2.</span> <span class="nav-text">链接分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-注释和特殊字符"><span class="nav-number">5.</span> <span class="nav-text">5 注释和特殊字符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注释"><span class="nav-number">5.0.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊字符"><span class="nav-number">5.0.2.</span> <span class="nav-text">特殊字符</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三部分-HTML标签（下）"><span class="nav-number"></span> <span class="nav-text">第三部分 HTML标签（下）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-表格标签"><span class="nav-number">1.</span> <span class="nav-text">1 表格标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主要作用"><span class="nav-number">1.0.1.</span> <span class="nav-text">主要作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本语法"><span class="nav-number">1.0.2.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表头单元格标签"><span class="nav-number">1.0.3.</span> <span class="nav-text">表头单元格标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表格属性"><span class="nav-number">1.0.4.</span> <span class="nav-text">表格属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表格结构标签"><span class="nav-number">1.0.5.</span> <span class="nav-text">表格结构标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#合并单元格"><span class="nav-number">1.0.6.</span> <span class="nav-text">合并单元格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-列表标签"><span class="nav-number">2.</span> <span class="nav-text">2 列表标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无序列表（重点）"><span class="nav-number">2.0.1.</span> <span class="nav-text">无序列表（重点）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有序列表（理解）"><span class="nav-number">2.0.2.</span> <span class="nav-text">有序列表（理解）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义列表（重点）"><span class="nav-number">2.0.3.</span> <span class="nav-text">自定义列表（重点）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-表单标签"><span class="nav-number">3.</span> <span class="nav-text">3 表单标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表单的组成"><span class="nav-number">3.0.1.</span> <span class="nav-text">表单的组成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表单域"><span class="nav-number">3.0.2.</span> <span class="nav-text">表单域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表单控件"><span class="nav-number">3.0.3.</span> <span class="nav-text">表单控件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
