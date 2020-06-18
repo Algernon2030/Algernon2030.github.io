@@ -108,19 +108,16 @@
 
 
 
-<meta name="description" content="如何在另一台电脑搭建HEXO博客环境。">
+<meta name="description" content="本文主要介绍如何将HEXO博客迁移到另一台电脑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="computer_setup">
-<meta property="og:url" content="http://www.yanweinotes.com/computer-setup.html">
+<meta property="og:title" content="update">
+<meta property="og:url" content="http://www.yanweinotes.com/update.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="如何在另一台电脑搭建HEXO博客环境。">
-<meta property="og:image" content="c:%5CUsers%5CYanwei%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200618224134733.png">
-<meta property="og:image" content="c:%5CUsers%5CYanwei%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200618224208768.png">
-<meta property="article:published_time" content="2020-06-18T14:39:36.000Z">
-<meta property="article:modified_time" content="2020-06-18T14:42:26.700Z">
+<meta property="og:description" content="本文主要介绍如何将HEXO博客迁移到另一台电脑。">
+<meta property="article:published_time" content="2020-06-18T15:04:51.000Z">
+<meta property="article:modified_time" content="2020-06-18T15:17:17.347Z">
 <meta property="article:author" content="wang-yanwei">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:%5CUsers%5CYanwei%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200618224134733.png">
 
 
 
@@ -150,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://www.yanweinotes.com/computer-setup.html"/>
+  <link rel="canonical" href="http://www.yanweinotes.com/update.html"/>
 
 
 
 
 
-  <title>computer_setup | Notes</title>
+  <title>update | Notes</title>
   
 
 
@@ -318,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.yanweinotes.com/computer-setup.html">
+    <link itemprop="mainEntityOfPage" href="http://www.yanweinotes.com/update.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang-yanwei">
@@ -335,7 +332,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">computer_setup</h2>
+          <h2 class="post-title" itemprop="name headline">update</h2>
         
 
         <div class="post-meta">
@@ -345,7 +342,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-18T22:39:36+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-18T23:04:51+08:00">
                 2020-06-18
               </time>
             
@@ -364,8 +361,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/computer-setup.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/computer-setup.html" itemprop="commentCount"></span>
+                <a href="/update.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/update.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,7 +370,7 @@
 
           
           
-             <span id="/computer-setup.html" class="leancloud_visitors" data-flag-title="computer_setup">
+             <span id="/update.html" class="leancloud_visitors" data-flag-title="update">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,9 +418,21 @@
       
 
       
-        <p>如何在另一台电脑搭建HEXO博客环境。<a id="more"></a></p>
-<p><img src="C:%5CUsers%5CYanwei%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200618224134733.png" alt="image-20200618224134733"></p>
-<p><img src="C:%5CUsers%5CYanwei%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200618224208768.png" alt="image-20200618224208768"></p>
+        <p>本文主要介绍如何将HEXO博客迁移到另一台电脑。<a id="more"></a></p>
+<p>第一步：下载<a href="https://git-scm.com/" target="_blank" rel="noopener">GIT</a>,默认安装。</p>
+<blockquote>
+<ul>
+<li>打开git bash,在用户主目录下运行：ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com">youremail@example.com</a>“，邮件换成自己的地址，例如ssh-keygen -t rsa -C “<a href="mailto:wangyw2018@gmail.com">wangyw2018@gmail.com</a>“，一直回车</li>
+<li>完成后，在目录中生成.ssh文件，里面有id_rsa和id_rsa.pub。</li>
+<li>登录网页版github，打开Settings」-&gt;「SSH and GPG keys」，然后点击「new SSH key」，Title任意填写，在Key文本框里粘贴公钥id_rsa.pub文件的内容,最后点击「Add SSH Key」，你就应该看到已经添加的Key。</li>
+</ul>
+</blockquote>
+<p>第二步：下载<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>,默认安装</p>
+<p>第三步：打开git bash，输入 npm install hexo-cli -g，开始安装hexo</p>
+<p>第四步：将原来的文件拷贝到新电脑中包括：_config.yml，theme/，source/，scaffolds/，</p>
+<p>package.json，.gitignore。其余的都不需要。</p>
+<p>第五步：将git bash切换目录到新拷贝的文件夹里（直接在拷贝的文件夹里面打开git bash），使用 npm install 命令，进行模块安装。使用hexo d来部署到git上 npm install hexo-deployer-git –save</p>
+<p>大功告成，可以尝试运行 hexo s –debug 内测。</p>
 
       
     </div>
@@ -444,7 +453,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.yanweinotes.com/computer-setup.html" title="computer_setup">http://www.yanweinotes.com/computer-setup.html</a>
+    <a href="http://www.yanweinotes.com/update.html" title="update">http://www.yanweinotes.com/update.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
