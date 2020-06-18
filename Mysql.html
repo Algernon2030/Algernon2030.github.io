@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="主要内容为SQL语法知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql">
+<meta property="og:url" content="http://www.yanweinotes.com/Mysql.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="主要内容为SQL语法知识">
+<meta property="article:published_time" content="2020-06-14T15:43:31.000Z">
+<meta property="article:modified_time" content="2020-06-16T02:30:18.095Z">
+<meta property="article:author" content="wang-yanwei">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: "",
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.yanweinotes.com/Mysql.html"/>
+
+
+
+
+
+  <title>Mysql | Notes</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+<meta name="baidu-site-verification" content="TfHnJzRr4W" />
+<meta name="google-site-verification" content="Ci64hWyRVKEiUcfySLmxFDYjYMUTeS6nN5eSFnyak6s" />
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.yanweinotes.com/Mysql.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang-yanwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ava.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Mysql</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-14T23:43:31+08:00">
+                2020-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Mysql.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Mysql.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Mysql.html" class="leancloud_visitors" data-flag-title="Mysql">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>主要内容为SQL语法知识<a id="more"></a></p>
+<p>一：SQL的语法要求：</p>
+<ul>
+<li>SQL语法可以多行也可以单行，主要以分号结尾。</li>
+<li>关键字不区分大小写</li>
+</ul>
+<p>二：SQL的分类：</p>
+<ul>
+<li>DDL：数据定义语言，定义数据库的对象：库、表、列</li>
+<li>DCL：数据控制语言，定义数据库的记录</li>
+<li>DQL：数据查询语言，执行查询操作</li>
+</ul>
+<p>主要讲DQL语言：不改变数据，仅仅将数据展示到客户端。</p>
+<p>语法：</p>
+<p>SELECT #查询的列的名称</p>
+<p>FROM  #查询表的名称</p>
+<p>WHERE #限定条件（关系和逻辑）</p>
+<ul>
+<li>关系条件：&gt;  &lt;  =  &lt;&gt;</li>
+<li>逻辑条件：AND OR NOT</li>
+<li>模糊查询：LIIKE,IN, BETWEEN AND IFNULL,NOT LIKE,NOT IN</li>
+</ul>
+<p>GROUP BY #对结果分类 </p>
+<p>ORDER BY #对数据进行排序</p>
+<p>三：具体例子</p>
+<p>补充案例：查询部门编号为30/50/70的员工名以及部门编号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,department_id</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE departments_id IN(30,50,70);</span><br></pre></td></tr></table></figure>
+
+<p>补充案例:查询部门编号不是100的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM employees</span><br><span class="line">WHERE department_id &lt;&gt; 100</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>条件查询</li>
+</ul>
+<p>案例1：查询工资&gt;10000的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE salary&gt;10000</span><br></pre></td></tr></table></figure>
+
+<p>案例2：查询 job_id不是’IT_PROG’的员工姓名、job_id、salary </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,job_id,salary</span><br><span class="line">from myemployers</span><br><span class="line">WHERE job_id NOT IT_PROG</span><br></pre></td></tr></table></figure>
+
+<p>案例3：查询工资&gt;10000并且小于20000的员工姓名、工资、年薪</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 方式一 *&#x2F;</span><br><span class="line">SELECT last_name,salary,salary*12*(1+IFNULL(利率,0)) 年薪</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE salary&gt;10000 AND salary&lt;20000</span><br><span class="line">&#x2F;* 方式二 *&#x2F;</span><br><span class="line">SELECT last_name,salary,salary*12*(1+IFNULL(利率,0)) 年薪</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE salary BETWEEN 10000 AND 20000</span><br></pre></td></tr></table></figure>
+
+<p>案例4：查询部门编号不在90到120之间的并且 工资&gt;15000的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE NOT(department_id&gt;&#x3D;90 AND department_id&lt;&#x3D;120) AND salary&gt;15000</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模糊查询</li>
+</ul>
+<p>案例1：查询员工信息表中姓名第一个字符为e的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE last_name LIKE &quot;e%&quot;</span><br></pre></td></tr></table></figure>
+
+<p>案例2：查询员工信息表中姓名第二个字符为e，第五个字符为a的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE last_name LIKE &quot;_e__a%&quot;</span><br></pre></td></tr></table></figure>
+
+<p>案例3：查询姓名中前面字符为ernst的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE last_name LIKE &quot;ernst&quot;</span><br></pre></td></tr></table></figure>
+
+<p>案例4：查询姓名中第二个字符为_的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHEERE last_name LIKE &quot;_\_%&quot;; &#x2F;*可以使用特殊字符 ESCAPE 特殊字符</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字段控制查询</li>
+</ul>
+<p>使用DISTINCT、IFNULL</p>
+<ul>
+<li>给列名命名方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 方式一 *&#x2F;</span><br><span class="line">SELECT 列名 as 别名</span><br><span class="line">FROM 表名</span><br><span class="line">&#x2F;* 方式二 *&#x2F;</span><br><span class="line">SELECT 列名  别名</span><br><span class="line">FROM 表名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>排序</li>
+</ul>
+<p>单个字段、多个字段、表达式、别名、函数</p>
+<p>其中默认为升序ASC，降序为DESC</p>
+<ul>
+<li>拼接函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CONCAT(last_name,first_name) as &quot;姓名&quot;</span><br><span class="line">FROM myemployers</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DISTINCT的使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT department_id </span><br><span class="line">FROM myemployers</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示表的结构并且查询全部数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DESC departments;</span><br><span class="line">SHOW COLUMNS FROM departments;</span><br><span class="line"></span><br><span class="line">SELECT *</span><br><span class="line">FROM departments;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示表的全部job_id(不能重复)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT job_id</span><br><span class="line">FROM myemployers;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示出表的全部列，列之间采用逗号链接，列头显示OUT_PUT</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CONCAT(last_name,&#39;,&#39;,first_name,&#39;,&#39;,salary,&#39;,&#39;,employee_id,&#39;,&#39;IFNULL(commission_pct,&#39;&#39;)) AS OUT_PUT</span><br><span class="line">FROM myemployers;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>IFNULL:可能为NULL的字段，最终显示结果为空</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT IFNULL(comission_pct,&#39;&#39;)</span><br><span class="line">FROM employers;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>IN:字段是否属于特定的列表之内 IN/NOT IN</li>
+</ul>
+<p>案例：查询工种编号不是SH_CLERK或IT_PROG的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE job_id NOT IN (&#39;SH_CLERK&#39;,&#39;IT_PROG&#39;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>BETWEEN AND:判断字段值介于两者之间</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM</span><br><span class="line">WHERE BETWEEN AND ;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>IS NULL/IS NOT NULL</li>
+</ul>
+<p>案例：查询没有奖金的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE commission_pct IS NULL;</span><br></pre></td></tr></table></figure>
+
+<p>查询工资大于12000的员工姓名和工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,salary</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE salary&gt;12000;</span><br></pre></td></tr></table></figure>
+
+<p>查询员工号为176的员工的姓名和部门号和年薪</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,departments_id,salary*12*(1+IFNULL(commission_pca,&#39;&#39;)) 年薪</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE id &#x3D; 176;</span><br></pre></td></tr></table></figure>
+
+<p>选择工资不在5000到12000的员工的姓名和工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,salary</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE salary NOT BETWEEN 5000 AND 12000；</span><br></pre></td></tr></table></figure>
+
+<p>选择在20或50号部门工作的员工姓名和部门号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,departments_id</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE departments_id IN(20,50);</span><br></pre></td></tr></table></figure>
+
+<p>选择公司中没有管理者的员工姓名及job_id</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,job_id</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE administer IS NULL;</span><br></pre></td></tr></table></figure>
+
+<p>选择公司中有奖金的员工姓名，工资和奖金级别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,salary,commission_pct</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE commission_pct IS NOT NULL;</span><br></pre></td></tr></table></figure>
+
+<p>选择员工姓名的第三个字母是a的员工姓名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name</span><br><span class="line">FROM employers</span><br><span class="line">WHERE last_name LIKE (&#39;__a%&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>选择姓名中有字母a和e的员工姓名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE last_name LIKE(&#39;%a%e%&#39;) OR last_name LIKE(&#39;%e%a%&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>显示出表employees表中 first_name 以 ‘e’结尾的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE first_name LIKE(&quot;%e&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>显示出表employees部门编号在80-100之间 的姓名、职位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,career</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE departments_id BETWEEN 80 AND 100;</span><br></pre></td></tr></table></figure>
+
+<p>显示出表employees的manager_id 是 100,101,110 的员工姓名、职位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT last_name,career</span><br><span class="line">FROM myemployers</span><br><span class="line">WHERE manager_id IN(100,101,110);</span><br></pre></td></tr></table></figure>
+
+<h3 id="博客更新-0615"><a href="#博客更新-0615" class="headerlink" title="博客更新 0615"></a>博客更新 0615</h3><p>常见函数：解决问题，编写命令，对外暴露方法名，共外部调用</p>
+<p>调用函数以及自定义函数：</p>
+<p>常见函数：字符函数、数学函数、日期函数、流程控制函数</p>
+<p>一、字符函数</p>
+<p>CONCAT 拼接函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CONCAT(&quot;hello,&quot;,first_name,last_name)</span><br><span class="line">FROM employees</span><br></pre></td></tr></table></figure>
+
+<p>LENGTH 获取字节常数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT LENGTH(&quot;hello,杨过&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>CHAR__LENGTH 获取字符长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CHAR_LENGTH(&quot;hello,杨过&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>SUBSTR 截取子串 SUBSTR(“字符”,起始位置，字符长度)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT SUBSTR(&quot;小龙女爱上杨过&quot;,1,3);</span><br></pre></td></tr></table></figure>
+
+<p>INSTR获取字符第一次出现的索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT INSTR(&quot;小弟唐僧遇见悟空cc唐僧bb唐僧&quot;,&quot;唐僧&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>TRIM 去掉前后空格</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT TRIM(&quot;  刘姥姥  &quot;) as 红楼梦</span><br></pre></td></tr></table></figure>
+
+<p>LPAD/RPAD 左填充/右填充 ,其中数字代表字符总数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT LPAD(&#39;林黛玉&#39;,6,&#39;d&#39;);</span><br><span class="line">SELECT RPAD(&#39;薛宝钗&#39;,6,&#39;d&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>UPPER/LOWER变大小写</p>
+<p>案例：查询员工表的姓名，姓氏大写,其它字母小写，名所有字符大写。姓和名之间分隔开，最后起名OUTPUT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT UPPER(SUBSTR(first_name,1,1))</span><br><span class="line">FROM employees;</span><br><span class="line">SELECT LOWER(SUBSTR(first_name,2))</span><br><span class="line">FROM employees;</span><br><span class="line">SELECT UPPER(last_name)</span><br><span class="line">FROM employees;</span><br><span class="line">SELECT CONCAT(UPPER(SUBSTR(first_name,1,1)),LOWER(SUBSTR(first_name,2)),&#39;_&#39;,UPPER(last_name)) &quot;OUTPUT&quot;</span><br><span class="line">FROM employees</span><br></pre></td></tr></table></figure>
+
+<p>STRCMP 比较两个字符大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT STRCMP(&#39;abc&#39;,&#39;cab&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>LEFT/RIGHT 截取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT LEFT(&#39;贾宝玉&#39;,1);</span><br><span class="line">SELECT RIGHT(&#39;王夫人&#39;,1);</span><br></pre></td></tr></table></figure>
+
+<p>二：数学函数</p>
+<p>ABS 绝对值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT ABS(-2,4);</span><br></pre></td></tr></table></figure>
+
+<p>CEIL 向上取整</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT CEIL(1.09);</span><br><span class="line">SELECT CEIL(0.13);</span><br><span class="line">SELECT CEIL(-1.18);</span><br></pre></td></tr></table></figure>
+
+<p>FLOOR 向下取整</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT FLOOR(1.6);</span><br><span class="line">SELECT FLOOR(-1.3);</span><br></pre></td></tr></table></figure>
+
+<p>ROUND 四舍五入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT ROUND(1.467);</span><br><span class="line">SELECT ROUND(1.432578,2);</span><br></pre></td></tr></table></figure>
+
+<p>TRUNCATE 截断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT TRUNCATE(1.765428,4);</span><br></pre></td></tr></table></figure>
+
+<p>MOD 取余</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT MOD(-10,3);</span><br><span class="line">SELECT MOD(10,3);</span><br><span class="line">SELECT MOD(-10,-3);</span><br></pre></td></tr></table></figure>
+
+<p>三、日期函数</p>
+<p>NOW 当前时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT NOW();</span><br></pre></td></tr></table></figure>
+
+<p>CURDATE 当前时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURDATE();</span><br></pre></td></tr></table></figure>
+
+<p>CURTIME</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURTIME();</span><br></pre></td></tr></table></figure>
+
+<p>DATADIFF 时间差</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATADIFF(&#39;1998-7-16&#39;,&#39;2019-7-13&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>DATA_FORMAT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATE_FORMAT(&#39;1998-7-16-14-23-12&#39;,&quot;%Y年%m月%d日 %H小时%i分钟%s秒&quot;)；</span><br></pre></td></tr></table></figure>
+
+<p>STR_TO_DATA 指定格式解析字符串为日期类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT STR_TO_DATE(&#39;3&#x2F;14 1998&#39;,&#39;%m&#x2F;%d %Y&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>四、流程控制</p>
+<p>IF函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT IF(100&gt;9,&#39;好&#39;，&#39;坏&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>案例：如果有奖金，显示最终奖金，如果没有，则显示为0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT IF(commission_pcb IS NULL,0,salary*12*(1+commission_pcb));</span><br><span class="line">FROM employees</span><br></pre></td></tr></table></figure>
+
+<p>CASE函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">情况1;</span><br><span class="line">CASE</span><br><span class="line">WHEN THEN</span><br><span class="line">WHEN THEN</span><br><span class="line"></span><br><span class="line">ELSE </span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>案例一：部门编号为30，工资显示为2倍</p>
+<p>部门编号为40，工资显示为3倍</p>
+<p>部门编号为60，工资显示为5倍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT salary,department_id</span><br><span class="line">CASE department_id </span><br><span class="line">WHEN 30 THEN salary*2</span><br><span class="line">WHEN 40 THEN salary*3</span><br><span class="line">WHEN 60 THEN salary*5</span><br><span class="line">ELSE salary</span><br><span class="line">END</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+<p>案例二：工资&gt;20000 显示级别为A</p>
+<p>工资&gt;15000,显示级别为B</p>
+<p>工资&gt;10000,显示级别为C</p>
+<p>否则为D</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT salary</span><br><span class="line">CASE</span><br><span class="line">WHEN salary&gt;20000 THEN &#39;A&#39;</span><br><span class="line">WHEN salary&gt;15000 THEN &#39;B&#39;</span><br><span class="line">WHEN salary&gt;15000 THEN &#39;C&#39;</span><br><span class="line">ELSE &#39;D&#39;</span><br><span class="line">END grade</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+<p>分组函数：实现将一组数据进行统计计算，得出一个值，成为统计函数</p>
+<p>SUM(字段名)：求和</p>
+<p>AVG(字段名)：平均值</p>
+<p>MAX(字段名)：最大值</p>
+<p>MIN(字段名)：最小值</p>
+<p>COUNT(字段名)：计数非空</p>
+<p>分组查询：GROUP BY</p>
+<p><strong>1**</strong>）简单的分组**</p>
+<p>案例1：查询每个工种的员工平均工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(salary),job_id</span><br><span class="line">FROM employees</span><br><span class="line">GROUP BY job_id;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2**</strong>）可以实现分组前的筛选**</p>
+<p>案例1：查询邮箱中包含a字符的 每个部门的最高工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT MAX(salary),department_id</span><br><span class="line">FROM employees</span><br><span class="line">WHERE email LIKE &#39;%a%&#39;</span><br><span class="line">GROUP BY department_id;</span><br></pre></td></tr></table></figure>
+
+<p>案例2：查询有奖金的每个领导手下员工的平均工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(salary),maneger_id</span><br><span class="line">FROM employees</span><br><span class="line">WHERE commission_pcb IS NOT NULL</span><br><span class="line">GROUP BY maneger_id;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3**</strong>）可以实现分组后的筛选**</p>
+<p>案例1：查询哪个部门的员工个数&gt;5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SELECT count(*) 人数,department_id</span><br><span class="line">FROM employees</span><br><span class="line">WHERE 人数&gt;5;</span><br><span class="line">GROUP BY department_id</span><br><span class="line"></span><br><span class="line">正确思路：</span><br><span class="line">SELECT count(*) 人数,department_id</span><br><span class="line">FROM employees</span><br><span class="line">GROUP BY department_id</span><br><span class="line">HAVING 人数 &gt; 5;</span><br><span class="line"> </span><br><span class="line">WHERE和 HAVING 分组前后区别 一个在前一个在后</span><br></pre></td></tr></table></figure>
+
+<p>案例2：每个工种有奖金的员工的最高工资&gt;12000的工种编号和最高工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT job_id,MAX(salary) 工资</span><br><span class="line">FROM employees</span><br><span class="line">WHERE commission_pcb IS NOT NULL</span><br><span class="line">GROUP BY job_id</span><br><span class="line">HAVING 工资&gt;12000;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>案例3：领导编号&gt;102的每个领导手下的最低工资大于5000的领导编号和最低工资</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT maneger_id,MIN(salary)</span><br><span class="line">FROM employees</span><br><span class="line">WHERE maneger_id&gt;102</span><br><span class="line">GROUP BY maneger_id</span><br><span class="line">HAVING MIN(salary)&lt;5000;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4**</strong>）可以实现排序**</p>
+<p>案例：每个工种有奖金的员工的最高工资&gt;6000的工种编号和最高工资,按最高工资升序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT job_id,MAX(salary)</span><br><span class="line">FROM employees</span><br><span class="line">WHERE commission_pcb IS NOT NULL</span><br><span class="line">GROUP BY job_id</span><br><span class="line">HAVING MAX(salary)&gt;6000 </span><br><span class="line">ORDER BY MAX(salary) ASC;</span><br></pre></td></tr></table></figure>
+
+<p><strong>5**</strong>）按多个字段分组**</p>
+<p>案例：查询每个工种每个部门的最低工资,并按最低工资降序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT job_id,department_id,MIN(salary)</span><br><span class="line">FROM employees</span><br><span class="line">GROUP BY job_id,department_id</span><br><span class="line">ORDER BY salary DESC;</span><br></pre></td></tr></table></figure>
+
+<p>SQL库中各个部分的组成及其作用</p>
+<p><strong>事务：</strong></p>
+<p>一、含义<br>事务：一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行<br>二、特点（ACID）<br>A 原子性：一个事务是不可再分割的整体，要么都执行要么都不执行<br>C 一致性：一个事务可以使数据从一个一致状态切换到另外一个一致的状态<br>I 隔离性：一个事务不受其他事务的干扰，多个事务互相隔离的<br>D 持久性：一个事务一旦提交了，则永久的持久化到本地</p>
+<p>三、事务的使用步骤 ★<br>了解：<br>隐式（自动）事务：没有明显的开启和结束，本身就是一条事务可以自动提交，比如insert、update、delete<br>显式事务：具有明显的开启和结束</p>
+<p>使用显式事务：<br>①开启事务<br>set autocommit=0;<br>start transaction;#可以省略</p>
+<p>②编写一组逻辑sql语句<br>注意：sql语句支持的是insert、update、delete</p>
+<p>设置回滚点：<br>savepoint 回滚点名;</p>
+<p>③结束事务<br>提交：commit;<br>回滚：rollback;<br>回滚到指定的地方：rollback to 回滚点名;<br>四、并发事务<br>1、事务的并发问题是如何发生的？<br>多个事务 同时 操作 同一个数据库的相同数据时<br>2、并发问题都有哪些？<br>脏读：一个事务读取了其他事务还没有提交的数据，读到的是其他事务“更新”的数据<br>不可重复读：一个事务多次读取，结果不一样<br>幻读：一个事务读取了其他事务还没有提交的数据，只是读到的是 其他事务“插入”的数据<br>3、如何解决并发问题<br>通过设置隔离级别来解决并发问题<br>4、隔离级别<br>                    脏读        不可重复读        幻读<br>read uncommitted:读未提交     ×                ×              ×<br>read committed：读已提交      √                ×              ×<br>repeatable read：可重复读     √                √              ×<br>serializable：串行化          √                √              √</p>
+<p><strong>视图</strong></p>
+<p>一、含义<br>mysql5.1版本出现的新特性，本身是一个虚拟表，它的数据来自于表，通过执行时动态生成。<br>好处：<br>1、简化sql语句<br>2、提高了sql的重用性<br>3、保护基表的数据，提高了安全性<br>二、创建<br>create view 视图名<br>as<br>查询语句;</p>
+<p>三、修改<br>方式一：<br>create or replace view 视图名<br>as<br>查询语句;<br>方式二：<br>alter view 视图名<br>as<br>查询语句</p>
+<p>四、删除<br>drop view 视图1，视图2,…;<br>五、查看<br>desc 视图名;<br>show create view 视图名;<br>六、使用<br>1.插入<br>insert<br>2.修改<br>update<br>3.删除<br>delete<br>4.查看<br>select<br>注意：视图一般用于查询的，而不是更新的，所以具备以下特点的视图都不允许更新<br>①包含分组函数、group by、distinct、having、union、<br>②join<br>③常量视图<br>④where后的子查询用到了from中的表<br>⑤用到了不可更新的视图</p>
+<p>七、视图和表的对比<br>        关键字        是否占用物理空间            使用<br>视图    view        占用较小，只保存sql逻辑        一般用于查询<br>表        table        保存实际的数据            增删改查</p>
+<p><strong>变量</strong></p>
+<p>分类<br>一、系统变量<br>说明：变量由系统提供的，不用自定义<br>语法：<br>①查看系统变量<br>show 【global|session 】variables like ‘’; 如果没有显式声明global还是session，则默认是session<br>②查看指定的系统变量的值<br>select @@【global|session】.变量名; 如果没有显式声明global还是session，则默认是session<br>③为系统变量赋值<br>方式一：<br>set 【global|session 】 变量名=值; 如果没有显式声明global还是session，则默认是session<br>方式二：<br>set @@global.变量名=值;<br>set @@变量名=值；</p>
+<p>1、全局变量<br>服务器层面上的，必须拥有super权限才能为系统变量赋值，作用域为整个服务器，也就是针对于所有连接（会话）有效</p>
+<p>2、会话变量<br>服务器为每一个连接的客户端都提供了系统变量，作用域为当前的连接（会话）</p>
+<p>二、自定义变量<br>说明：<br>1、用户变量<br>作用域：针对于当前连接（会话）生效<br>位置：begin end里面，也可以放在外面<br>使用：</p>
+<p>①声明并赋值：<br>set @变量名=值;或<br>set @变量名:=值;或<br>select @变量名:=值;</p>
+<p>②更新值<br>方式一：<br>    set @变量名=值;或<br>    set @变量名:=值;或<br>    select @变量名:=值;<br>方式二：<br>    select xx into @变量名 from 表;</p>
+<p>③使用<br>select @变量名;</p>
+<p>2、局部变量<br>作用域：仅仅在定义它的begin end中有效<br>位置：只能放在begin end中，而且只能放在第一句<br>使用：<br>①声明<br>declare 变量名 类型 【default 值】;<br>②赋值或更新<br>方式一：<br>    set 变量名=值;或<br>    set 变量名:=值;或<br>    select @变量名:=值;<br>方式二：<br>    select xx into 变量名 from 表;<br>③使用<br>select 变量名;</p>
+<p><strong>存储过程</strong></p>
+<p>一、创建 ★<br>create procedure 存储过程名(参数模式 参数名 参数类型)<br>begin<br>        存储过程体<br>end<br>注意：<br>1.参数模式：in、out、inout，其中in可以省略<br>2.存储过程体的每一条sql语句都需要用分号结尾</p>
+<p>二、调用<br>call 存储过程名(实参列表)<br>举例：<br>调用in模式的参数：call sp1（‘值’）;<br>调用out模式的参数：set @name; call sp1(@name);select @name;<br>调用inout模式的参数：set @name=值; call sp1(@name); select @name;<br>三、查看<br>show create procedure 存储过程名;<br>四、删除<br>drop procedure 存储过程名;</p>
+<p><strong>函数</strong></p>
+<p>一、创建<br>create function 函数名(参数名 参数类型) returns  返回类型<br>begin<br>    函数体<br>end</p>
+<p>注意：函数体中肯定需要有return语句<br>二、调用<br>select 函数名(实参列表);<br>三、查看<br>show create function 函数名;<br>四、删除<br>drop function 函数名；</p>
+<p><strong>流程控制结构</strong></p>
+<p>分支结构</p>
+<p>特点：<br>1、if函数<br>功能：实现简单双分支<br>语法：<br>if(条件，值1，值2)<br>位置：<br>可以作为表达式放在任何位置<br>2、case结构<br>功能：实现多分支<br>语法1：<br>case 表达式或字段<br>when 值1 then 语句1;<br>when 值2 then 语句2；<br>..<br>else 语句n;<br>end [case];</p>
+<p>语法2：<br>case<br>when 条件1 then 语句1;<br>when 条件2 then 语句2；<br>..<br>else 语句n;<br>end [case];</p>
+<p>位置：<br>可以放在任何位置，<br>如果放在begin end 外面，作为表达式结合着其他语句使用<br>如果放在begin end 里面，一般作为独立的语句使用<br>3、if结构<br>功能：实现多分支<br>语法：<br>if 条件1 then 语句1;<br>elseif 条件2 then 语句2;<br>…<br>else 语句n;<br>end if;<br>位置：<br>只能放在begin end中</p>
+<p>循环结构</p>
+<p>位置：<br>只能放在begin end中</p>
+<p>特点：都能实现循环结构</p>
+<p>对比：</p>
+<p>①这三种循环都可以省略名称，但如果循环中添加了循环控制语句（leave或iterate）则必须添加名称<br>②<br>loop 一般用于实现简单的死循环<br>while 先判断后执行<br>repeat 先执行后判断，无条件至少执行一次</p>
+<p>1、while<br>语法：<br>【名称:】while 循环条件 do<br>        循环体<br>end while 【名称】;<br>2、loop<br>语法：<br>【名称：】loop<br>        循环体<br>end loop 【名称】;</p>
+<p>3、repeat<br>语法：<br>【名称:】repeat<br>        循环体<br>until 结束条件<br>end repeat 【名称】;</p>
+<p>二、循环控制语句<br>leave：类似于break，用于跳出所在的循环<br>iterate：类似于continue，用于结束本次循环，继续下一次</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wang-yanwei
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.yanweinotes.com/Mysql.html" title="Mysql">http://www.yanweinotes.com/Mysql.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html" rel="next" title="CNN">
+                <i class="fa fa-chevron-left"></i> CNN
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/environment.html" rel="prev" title="environment">
+                environment <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/ava.jpg"
+                alt="wang-yanwei" />
+            
+              <p class="site-author-name" itemprop="name">wang-yanwei</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/algernon2030" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-github"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:algernon2030@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#博客更新-0615"><span class="nav-number">1.</span> <span class="nav-text">博客更新 0615</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wang-yanwei</span>
+
+  
+</div>
+
+
+
+
+
+
+<div class="powered-by">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+        本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">
+        本站访问量<span id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    new Valine({
+        lang: 'en',
+        admin_email: 'wangyw2018@gmail.com',
+        el: '#comments' ,
+        appId: 'YBhHBVRQItdsmmsvSrs7wHFS-gzGzoHsz',
+        appKey: 'uCHcRzVqRzUXlN9GsVIyRfoS',
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+        emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+        placeholder: 'Just go go',
+  });
+  </script>
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 17880,
+    el: 'wpac-rating',
+    color: 'f79533'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
