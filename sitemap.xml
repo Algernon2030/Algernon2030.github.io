@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yanweinotes.com/test01.html</loc>
+    
+    <lastmod>2020-06-24T23:14:39.405Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yanweinotes.com/test02.html</loc>
+    
+    <lastmod>2020-06-24T23:14:16.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yanweinotes.com/test03.html</loc>
+    
+    <lastmod>2020-06-24T23:13:40.744Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yanweinotes.com/deepserver.html</loc>
     
     <lastmod>2020-06-21T11:54:24.239Z</lastmod>
